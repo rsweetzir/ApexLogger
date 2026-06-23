@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — ApexLogger</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --surface: #141414; --border: #222;
+      --accent: #4a90d9; --text: #f0f0f0; --muted: #888;
+      --green: #30d158;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; }
+    a { color: var(--accent); }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px; border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 700; text-decoration: none; color: var(--text); }
+    .nav-back a { font-size: 0.9rem; color: var(--muted); }
+
+    main { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+    .page-title { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 48px; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px; margin-bottom: 16px;
+    }
+    .card h2 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+    .card p  { font-size: 0.9rem; color: #bbb; margin-bottom: 14px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .btn {
+      display: inline-block; padding: 10px 20px; border-radius: 10px;
+      font-size: 0.88rem; font-weight: 600; background: var(--accent);
+      color: #fff; text-decoration: none; transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-ghost {
+      background: transparent; border: 1px solid var(--border); color: var(--text);
+    }
+
+    h2.section { font-size: 1.2rem; font-weight: 600; margin: 44px 0 18px; }
+
+    details {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 22px; margin-bottom: 10px;
+    }
+    summary {
+      font-size: 0.95rem; font-weight: 500; cursor: pointer; list-style: none;
+    }
+    summary::after { content: " ↓"; color: var(--muted); font-size: 0.8rem; }
+    details[open] summary::after { content: " ↑"; }
+    details p {
+      margin-top: 12px; font-size: 0.88rem; color: #bbb; line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 40px;
+      font-size: 0.85rem; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">ApexLogger</a>
+  <span class="nav-back"><a href="index.html">← Back</a></span>
+</nav>
+
+<main>
+  <h1 class="page-title">Support</h1>
+  <p class="subtitle">Get help, report a bug, or request a feature.</p>
+
+  <div class="card">
+    <h2>Report a Bug</h2>
+    <p>Found something broken? Open an issue on GitHub with a description of what happened, what you expected, and your iPhone model and iOS version.</p>
+    <a class="btn" href="https://github.com/rsweetzir/ApexLogger/issues/new?template=bug_report.md" target="_blank">Open a Bug Report</a>
+  </div>
+
+  <div class="card">
+    <h2>Request a Feature</h2>
+    <p>Have an idea for a new gauge, engine, or workflow? Submit a feature request and it will be reviewed for a future release.</p>
+    <a class="btn btn-ghost" href="https://github.com/rsweetzir/ApexLogger/issues/new?template=feature_request.md" target="_blank">Submit a Feature Request</a>
+  </div>
+
+  <div class="card">
+    <h2>Email Support</h2>
+    <p>Prefer email? Reach out directly for anything you'd rather not post publicly.</p>
+    <a class="btn btn-ghost" href="mailto:rsweetzir@gmail.com">rsweetzir@gmail.com</a>
+  </div>
+
+  <h2 class="section">Frequently Asked Questions</h2>
+
+  <details>
+    <summary>Which OBD-II interfaces work with ApexLogger?</summary>
+    <p>ApexLogger works with Bluetooth Low Energy (BLE) OBD-II interfaces that are compatible with iPhone. Popular options include the OBDLink MX+ and Veepeak OBDCheck BLE+. Avoid generic ELM327 adapters — many use classic Bluetooth or have unreliable firmware that causes disconnects.</p>
+  </details>
+
+  <details>
+    <summary>Does the app work without an OBD-II interface?</summary>
+    <p>Yes. Without an OBD connection, ApexLogger shows GPS speed (MPH or KPH), GPS lap timing, course walking, and Apple Watch heart rate. OBD-II telemetry (boost, fuel pressure, timing corrections, temps) requires a compatible interface.</p>
+  </details>
+
+  <details>
+    <summary>Which engines are supported?</summary>
+    <p>The current release includes profiles for N54, N55, B58, and N52/N51 engines. Select your engine profile in Settings so the correct gauges and PIDs are shown. Additional profiles are planned — <a href="https://github.com/rsweetzir/ApexLogger/issues" target="_blank">request yours on GitHub</a>.</p>
+  </details>
+
+  <details>
+    <summary>Why isn't heart rate showing on my Apple Watch?</summary>
+    <p>Heart rate only streams while an active workout session is running on the Watch. Tap the Run or Walk button in the Apple Watch app (or use the ARM / Walk Course buttons on your iPhone) to start a session. The optical HR sensor activates automatically once the session begins.</p>
+  </details>
+
+  <details>
+    <summary>How do I set a start/finish line?</summary>
+    <p>Drive to or walk to your start line, open the Track tab, and tap "Set Start Line." ApexLogger will automatically trigger lap timing each time you cross that point while recording is active.</p>
+  </details>
+
+  <details>
+    <summary>Is my data sent anywhere?</summary>
+    <p>No. All GPS, OBD, and health data is stored locally on your device. Nothing is transmitted to any server. See the full <a href="privacy.html">Privacy Policy</a> for details.</p>
+  </details>
+
+  <details>
+    <summary>The app is for off-street / closed course use only?</summary>
+    <p>Yes. ApexLogger is designed for use at sanctioned track events, autocross, and private closed courses. Use on public roads may be illegal and is done entirely at your own risk.</p>
+  </details>
+
+</main>
+
+<footer>
+  <span>© 2026 ApexLogger</span>
+  <div><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></div>
+</footer>
+
+</body>
+</html>

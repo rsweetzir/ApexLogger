@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApexLogger — Track-Day Performance Logger</title>
+  <meta name="description" content="Track-day data logging for performance car enthusiasts. GPS speed, boost, fuel pressure, timing corrections, and Apple Watch heart rate — all in one app." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --border: #222;
+      --accent: #4a90d9;
+      --accent-dim: rgba(74,144,217,0.12);
+      --text: #f0f0f0;
+      --muted: #888;
+      --green: #30d158;
+      --red: #ff453a;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 28px; font-size: 0.9rem; color: var(--muted); }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 90px 24px 70px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 40px;
+    }
+    .btn-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+
+    /* CAR IMAGE */
+    .car-wrap {
+      max-width: 820px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+    .car-wrap img {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    /* FEATURES GRID */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 48px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ENGINE TABLE */
+    .engine-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    tr:last-child td { border-bottom: none; }
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-right: 4px;
+    }
+    .badge-green { background: rgba(48,209,88,0.15); color: var(--green); }
+    .badge-blue  { background: var(--accent-dim);    color: var(--accent); }
+
+    /* WATCH SECTION */
+    .watch-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      text-align: center;
+    }
+    .watch-section p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 16px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* PRIVACY CALLOUT */
+    .privacy-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .privacy-bar h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .privacy-bar p  { color: var(--muted); font-size: 0.9rem; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--text); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">ApexLogger</span>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#engines">Engines</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Track-Day Data Logging</span>
+  <h1>Your car.<br /><span>Every data point.</span></h1>
+  <p>GPS lap timing, boost, fuel pressure, per-cylinder timing corrections, and Apple Watch heart rate — all recorded in one app built for performance enthusiasts.</p>
+  <div class="btn-group">
+    <a class="btn btn-primary" href="#appstore">Download on the App Store</a>
+    <a class="btn btn-ghost" href="https://github.com/rsweetzir/ApexLogger/issues" target="_blank">Report an Issue</a>
+  </div>
+</section>
+
+<div class="car-wrap">
+  <img src="icon.png" alt="Performance coupe on track" />
+</div>
+
+<section class="section" id="features">
+  <p class="section-label">What it does</p>
+  <h2 class="section-title">Everything at a glance</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">🏁</div>
+      <h3>GPS Lap Timing</h3>
+      <p>Set a virtual start line anywhere. ApexLogger auto-triggers on crossing and records split times with millisecond precision.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📡</div>
+      <h3>OBD-II Telemetry</h3>
+      <p>Connect a Bluetooth OBD-II interface to stream real-time boost, throttle, oil temp, coolant, and engine-specific data.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⛽</div>
+      <h3>N54 Fuel Pressure</h3>
+      <p>HPFP and LPFP live monitoring with configurable warning thresholds — critical data for tuned and high-boost builds.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <h3>Per-Cylinder Timing</h3>
+      <p>See timing corrections for all six cylinders in real time. Catch knock before it becomes a problem.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗺</div>
+      <h3>Walk the Course</h3>
+      <p>Walk your track layout on foot before driving. ApexLogger maps your GPS path and stores it for reference during the session.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⌚</div>
+      <h3>Apple Watch Heart Rate</h3>
+      <p>Arm a workout session from your wrist or phone. Live BPM appears on the gauges page and is recorded with every track point.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Session Review</h3>
+      <p>Browse saved runs with peak speed, elapsed time, and point count. Detailed stats view for every session.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚗</div>
+      <h3>OBD-Free Mode</h3>
+      <p>No interface? No problem. GPS speed with MPH / KPH toggle is always available — no OBD connection required.</p>
+    </div>
+  </div>
+</section>
+
+<section class="engine-section" id="engines">
+  <p class="section-label">Engine support</p>
+  <h2 class="section-title" style="text-align:center;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;letter-spacing:-0.5px;margin-bottom:32px;">Supported engine profiles</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Engine</th>
+        <th>Cars</th>
+        <th>Features</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>N54</strong></td>
+        <td>135i, 1M Coupe, 335i E9x</td>
+        <td>
+          <span class="badge badge-green">Boost</span>
+          <span class="badge badge-green">HPFP</span>
+          <span class="badge badge-green">LPFP</span>
+          <span class="badge badge-blue">Timing ×6</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>N55</strong></td>
+        <td>235i, M2, 335i F30</td>
+        <td>
+          <span class="badge badge-green">Boost</span>
+          <span class="badge badge-blue">Timing ×6</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>B58</strong></td>
+        <td>M240i, M340i, Supra</td>
+        <td>
+          <span class="badge badge-green">Boost</span>
+          <span class="badge badge-blue">Knock Retard</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>N52 / N51</strong></td>
+        <td>128i, 328i (NA)</td>
+        <td>
+          <span class="badge badge-blue">Throttle</span>
+          <span class="badge badge-blue">VANOS</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:18px;font-size:0.85rem;color:var(--muted);text-align:center;">
+    More engine profiles coming. <a href="https://github.com/rsweetzir/ApexLogger/issues" target="_blank">Request your engine →</a>
+  </p>
+</section>
+
+<div class="privacy-bar">
+  <h3>🔒 Your data stays on your device</h3>
+  <p>ApexLogger collects no personal information and sends nothing to external servers.<br />All GPS, OBD, and health data is stored locally and exported only when you choose to share it.</p>
+  <p style="margin-top:10px;"><a href="privacy.html">Read the full privacy policy →</a></p>
+</div>
+
+<section class="watch-section">
+  <p class="section-label">Apple Watch</p>
+  <h2 class="section-title" style="text-align:center;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;letter-spacing:-0.5px;">Arm from your wrist</h2>
+  <p>Tap Run or Walk on your Apple Watch to start a workout session. Heart rate streams live to your iPhone gauges and is recorded with every data point — no phone interaction needed at the start line.</p>
+</section>
+
+<footer>
+  <span>© 2026 ApexLogger. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="support.html">Support</a>
+    <a href="https://github.com/rsweetzir/ApexLogger" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>

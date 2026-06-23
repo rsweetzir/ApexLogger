@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ApexLogger</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --surface: #141414; --border: #222;
+      --accent: #4a90d9; --text: #f0f0f0; --muted: #888;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; }
+    a { color: var(--accent); }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px; border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 700; text-decoration: none; color: var(--text); }
+    .nav-back { font-size: 0.9rem; color: var(--muted); }
+    .nav-back a { color: var(--muted); }
+
+    main { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+    .page-title { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .updated { font-size: 0.85rem; color: var(--muted); margin-bottom: 48px; }
+
+    h2 { font-size: 1.1rem; font-weight: 600; margin: 36px 0 10px; }
+    p  { font-size: 0.95rem; color: #ccc; margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    li { font-size: 0.95rem; color: #ccc; margin-bottom: 6px; }
+
+    .callout {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 24px; margin: 32px 0;
+    }
+    .callout strong { color: var(--text); }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 40px;
+      font-size: 0.85rem; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">ApexLogger</a>
+  <span class="nav-back"><a href="index.html">← Back</a></span>
+</nav>
+
+<main>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="updated">Effective date: June 23, 2026</p>
+
+  <div class="callout">
+    <strong>Short version:</strong> ApexLogger does not collect, transmit, or sell any personal information. All data recorded by the app stays on your device unless you explicitly choose to export or share it.
+  </div>
+
+  <h2>1. Information We Do Not Collect</h2>
+  <p>ApexLogger does not collect, store on external servers, or transmit:</p>
+  <ul>
+    <li>Your name, email address, or any account information</li>
+    <li>Device identifiers or advertising IDs</li>
+    <li>Usage analytics or crash reports sent to third-party services</li>
+    <li>Location data sent off your device</li>
+    <li>Health or fitness data sent off your device</li>
+  </ul>
+  <p>There are no third-party SDKs, analytics frameworks, or advertising libraries in this app.</p>
+
+  <h2>2. Data Recorded on Your Device</h2>
+  <p>During a session, ApexLogger may record the following data <strong>locally on your iPhone</strong>:</p>
+  <ul>
+    <li><strong>GPS location and speed</strong> — used for lap timing, course mapping, and speed gauges</li>
+    <li><strong>OBD-II vehicle data</strong> — boost pressure, fuel pressure, throttle position, oil and coolant temperatures, per-cylinder timing corrections, and similar parameters read from your vehicle's ECU via a connected Bluetooth interface</li>
+    <li><strong>Accelerometer / gyroscope data</strong> — used to calculate lateral and longitudinal G-forces</li>
+    <li><strong>Heart rate</strong> — read from Apple Watch via HealthKit during an active workout session; displayed on screen and recorded with each track point</li>
+  </ul>
+  <p>This data is stored only in your app's local storage and is never transmitted to any server operated by ApexLogger or any third party.</p>
+
+  <h2>3. HealthKit</h2>
+  <p>ApexLogger requests read access to heart rate data from HealthKit solely to display your live BPM during a session and to record it alongside your track data. This data is:</p>
+  <ul>
+    <li>Never shared with third parties</li>
+    <li>Never used for advertising or marketing purposes</li>
+    <li>Never stored outside the app's local container or your personal iCloud Health data (which is governed by Apple's own privacy policy)</li>
+  </ul>
+  <p>You can revoke HealthKit access at any time in iOS Settings → Privacy & Security → Health → ApexLogger.</p>
+
+  <h2>4. Location Services</h2>
+  <p>ApexLogger uses CoreLocation to determine GPS speed and coordinates. Location data is used exclusively within the app for lap timing, course mapping, and speed display. It is not transmitted off your device.</p>
+  <p>You can revoke location access at any time in iOS Settings → Privacy & Security → Location Services → ApexLogger.</p>
+
+  <h2>5. OBD-II Interface</h2>
+  <p>ApexLogger communicates with Bluetooth OBD-II interfaces compatible with iPhone. Data exchanged with the interface is read-only — the app does not send commands that alter your vehicle's configuration. All data received is processed and stored locally on your device.</p>
+
+  <h2>6. Data Export</h2>
+  <p>ApexLogger may offer the ability to export session data as a file (e.g. CSV or video overlay). Exports are initiated entirely by you, and the destination is your choice — the app itself does not upload or share data automatically.</p>
+
+  <h2>7. Children's Privacy</h2>
+  <p>ApexLogger is intended for use by licensed drivers and is not directed at children under 13. We do not knowingly collect any information from children.</p>
+
+  <h2>8. Changes to This Policy</h2>
+  <p>If this privacy policy changes in a material way, the updated version will be posted at this URL with a revised effective date. Continued use of the app after a change constitutes acceptance of the updated policy.</p>
+
+  <h2>9. Contact</h2>
+  <p>Questions about this policy can be directed to <a href="mailto:rsweetzir@gmail.com">rsweetzir@gmail.com</a> or filed as an issue at <a href="https://github.com/rsweetzir/ApexLogger/issues" target="_blank">github.com/rsweetzir/ApexLogger/issues</a>.</p>
+</main>
+
+<footer>
+  <span>© 2026 ApexLogger</span>
+  <div><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="support.html">Support</a></div>
+</footer>
+
+</body>
+</html>
