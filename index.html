@@ -349,6 +349,38 @@
     }
     .siri-chip span { color: var(--muted); }
 
+    /* SCREENSHOTS */
+    .screenshots-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .screenshot-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .screenshot-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .screenshot-label {
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 760px) {
+      .screenshots-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+    }
+
     /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
@@ -380,6 +412,7 @@
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#modes">Modes</a>
+    <a href="#screenshots">Screenshots</a>
     <a href="#carplay">CarPlay</a>
     <a href="#engines">Engines</a>
     <a href="support.html">Support</a>
@@ -624,6 +657,26 @@
   <p style="margin-top:18px;font-size:0.85rem;color:var(--muted);text-align:center;">
     More engine profiles coming. <a href="support.html">Request your engine →</a>
   </p>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots-section" id="screenshots">
+  <p class="section-label">See it in action</p>
+  <h2 class="section-title">Built for the track, refined for the road</h2>
+  <div class="screenshots-grid">
+    <div class="screenshot-wrap">
+      <img src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-06-28 at 14.12.16.png" alt="ApexLogger gauges screen showing GPS speed and G-force arrows" />
+      <div class="screenshot-label">GPS speed + G-force display — no OBD required</div>
+    </div>
+    <div class="screenshot-wrap">
+      <img src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-06-28 at 14.12.26.png" alt="ApexLogger track screen in Autocross mode" />
+      <div class="screenshot-label">Autocross mode — set Start, Finish, and waypoints on the map</div>
+    </div>
+    <div class="screenshot-wrap">
+      <img src="screenshots/Simulator Screenshot - iPad Pro 13-inch (M5) - 2026-06-28 at 13.53.56.png" alt="ApexLogger on iPad showing event type selector" />
+      <div class="screenshot-label">iPad — switch between Autocross, Drag, Track Day, and Rally</div>
+    </div>
+  </div>
 </section>
 
 <div class="privacy-bar">
