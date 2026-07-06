@@ -1,0 +1,264 @@
+{
+  "profiles": [
+    {
+      "id": "bmw_n54",
+      "name": "N54 · 3.0L Twin-Turbo I6",
+      "shortName": "N54 TT",
+      "cylinderCount": 6,
+      "firingOrder": [1, 5, 3, 6, 2, 4],
+      "isTurbo": true,
+      "tcm": { "request": "7E3", "response": "7EB" },
+      "features": {
+        "showHPFP": true,
+        "showTimingCorr": true,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": false
+      },
+      "thresholds": {
+        "boostWarnPSI": 18,
+        "boostCriticalPSI": 22,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "bmw_n55",
+      "name": "N55 · 3.0L Single-Turbo I6",
+      "shortName": "N55 T",
+      "cylinderCount": 6,
+      "firingOrder": [1, 5, 3, 6, 2, 4],
+      "isTurbo": true,
+      "tcm": { "request": "7E3", "response": "7EB" },
+      "features": {
+        "showHPFP": true,
+        "showTimingCorr": true,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": false
+      },
+      "thresholds": {
+        "boostWarnPSI": 14,
+        "boostCriticalPSI": 18,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "bmw_b58",
+      "name": "B58 · 3.0L Single-Turbo I6+",
+      "shortName": "B58 T",
+      "cylinderCount": 6,
+      "firingOrder": [1, 5, 3, 6, 2, 4],
+      "isTurbo": true,
+      "tcm": { "request": "7E3", "response": "7EB" },
+      "features": {
+        "showHPFP": true,
+        "showTimingCorr": false,
+        "showKnockRetard": true,
+        "showVANOS": false,
+        "showFuelRailPressure": false
+      },
+      "thresholds": {
+        "boostWarnPSI": 16,
+        "boostCriticalPSI": 20,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "bmw_n52_n51",
+      "name": "N52 / N51 · 3.0L NA I6",
+      "shortName": "NA I6",
+      "cylinderCount": 6,
+      "firingOrder": [1, 5, 3, 6, 2, 4],
+      "isTurbo": false,
+      "tcm": null,
+      "features": {
+        "showHPFP": false,
+        "showTimingCorr": false,
+        "showKnockRetard": false,
+        "showVANOS": true,
+        "showFuelRailPressure": false
+      },
+      "thresholds": {
+        "boostWarnPSI": 0,
+        "boostCriticalPSI": 0,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "vw_rs3",
+      "name": "RS3 · 2.5L Turbo I5",
+      "shortName": "RS3 I5",
+      "cylinderCount": 5,
+      "firingOrder": [1, 2, 4, 5, 3],
+      "isTurbo": true,
+      "tcm": { "request": "7E2", "response": "7EA" },
+      "features": {
+        "showHPFP": false,
+        "showTimingCorr": false,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": true
+      },
+      "thresholds": {
+        "boostWarnPSI": 20,
+        "boostCriticalPSI": 25,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "vw_gti_mk8",
+      "name": "Golf GTI Mk8 · 2.0L TSI",
+      "shortName": "GTI Mk8",
+      "cylinderCount": 4,
+      "firingOrder": [1, 3, 4, 2],
+      "isTurbo": true,
+      "tcm": { "request": "7E2", "response": "7EA" },
+      "features": {
+        "showHPFP": false,
+        "showTimingCorr": false,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": true
+      },
+      "thresholds": {
+        "boostWarnPSI": 14,
+        "boostCriticalPSI": 18,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "vw_golf_r",
+      "name": "Golf R Mk8 · 2.0L TSI",
+      "shortName": "Golf R",
+      "cylinderCount": 4,
+      "firingOrder": [1, 3, 4, 2],
+      "isTurbo": true,
+      "tcm": { "request": "7E2", "response": "7EA" },
+      "features": {
+        "showHPFP": false,
+        "showTimingCorr": false,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": true
+      },
+      "thresholds": {
+        "boostWarnPSI": 16,
+        "boostCriticalPSI": 20,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "volvo_xc60",
+      "name": "Volvo XC60 B5/B6 · 2.0T",
+      "shortName": "XC60 B5/6",
+      "cylinderCount": 4,
+      "firingOrder": [1, 3, 4, 2],
+      "isTurbo": true,
+      "tcm": null,
+      "features": {
+        "showHPFP": false,
+        "showTimingCorr": false,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": true
+      },
+      "thresholds": {
+        "boostWarnPSI": 12,
+        "boostCriticalPSI": 16,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "honda_civic15t",
+      "name": "Civic 1.5T · 2016+ I4 Turbo",
+      "shortName": "Civic 1.5T",
+      "cylinderCount": 4,
+      "firingOrder": [1, 3, 4, 2],
+      "isTurbo": true,
+      "tcm": null,
+      "features": {
+        "showHPFP": false,
+        "showTimingCorr": false,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": false
+      },
+      "thresholds": {
+        "boostWarnPSI": 14,
+        "boostCriticalPSI": 18,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    },
+    {
+      "id": "honda_civic_typer",
+      "name": "Civic Type R · FK8/FL5 K20C1",
+      "shortName": "Civic CTR",
+      "cylinderCount": 4,
+      "firingOrder": [1, 3, 4, 2],
+      "isTurbo": true,
+      "tcm": null,
+      "features": {
+        "showHPFP": false,
+        "showTimingCorr": false,
+        "showKnockRetard": false,
+        "showVANOS": false,
+        "showFuelRailPressure": false
+      },
+      "thresholds": {
+        "boostWarnPSI": 21,
+        "boostCriticalPSI": 26,
+        "oilOptimalF": 240,
+        "oilWarnF": 250,
+        "oilCriticalF": 270,
+        "cltOptimalF": 207,
+        "cltWarnF": 230,
+        "cltCriticalF": 248
+      }
+    }
+  ]
+}
