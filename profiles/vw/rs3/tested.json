@@ -1,0 +1,15 @@
+{
+  "id": "vw_rs3",
+  "name": "RS3 · 2.5L Turbo I5",
+  "shortName": "RS3 I5",
+  "cylinderCount": 5,
+  "firingOrder": [1, 2, 4, 5, 3],
+  "isTurbo": true,
+  "tcm": { "request": "7E2", "response": "7EA" },
+  "features": { "showFuelRailPressure": true },
+  "thresholds": {
+    "boostWarnPSI": 20, "boostCriticalPSI": 25,
+    "oilOptimalF": 240, "oilWarnF": 250, "oilCriticalF": 270,
+    "cltOptimalF": 207, "cltWarnF": 230, "cltCriticalF": 248
+  }
+}
