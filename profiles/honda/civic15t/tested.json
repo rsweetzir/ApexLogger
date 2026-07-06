@@ -1,0 +1,15 @@
+{
+  "id": "honda_civic15t",
+  "name": "Civic 1.5T · 2016+ I4 Turbo",
+  "shortName": "Civic 1.5T",
+  "cylinderCount": 4,
+  "firingOrder": [1, 3, 4, 2],
+  "isTurbo": true,
+  "tcm": null,
+  "features": {},
+  "thresholds": {
+    "boostWarnPSI": 14, "boostCriticalPSI": 18,
+    "oilOptimalF": 240, "oilWarnF": 250, "oilCriticalF": 270,
+    "cltOptimalF": 207, "cltWarnF": 230, "cltCriticalF": 248
+  }
+}
