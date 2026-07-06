@@ -6,10 +6,45 @@
   "firingOrder": [1, 5, 3, 6, 2, 4],
   "isTurbo": true,
   "tcm": { "request": "7E3", "response": "7EB" },
-  "features": { "showHPFP": true, "showKnockRetard": true },
-  "thresholds": {
-    "boostWarnPSI": 16, "boostCriticalPSI": 20,
-    "oilOptimalF": 240, "oilWarnF": 250, "oilCriticalF": 270,
-    "cltOptimalF": 207, "cltWarnF": 230, "cltCriticalF": 248
+  "canConfig": { "protocol": "6", "txHeader": "7E0", "rxHeader": "7E8" },
+  "manufacturer": { "name": "BMW", "ecu": "MG1", "mode": "22" },
+  "sensors": {
+    "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "tickRate": 1 },
+    "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "tickRate": 1 },
+
+    "boostPressure": {
+      "pid": "1151", "formula": "AB_LINEAR", "scale": 0.0145, "offset": -14.7,
+      "unit": "PSI", "tickRate": 1,
+      "warnPSI": 16, "criticalPSI": 20
+    },
+
+    "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "tickRate": 10, "tickOffset": 6 },
+    "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "tickRate": 10, "tickOffset": 6 },
+    "batteryVoltage":     { "pid": "0142", "formula": "AB_LINEAR", "scale": 0.001, "unit": "V", "tickRate": 10, "tickOffset": 8 },
+
+    "coolantTemp": {
+      "pid": "0105", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10,
+      "optimalF": 207, "warnF": 230, "criticalF": 248
+    },
+    "intakeAirTemp": {
+      "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10, "tickOffset": 2,
+      "criticalF": 145, "heatSoakDeltaF": 35
+    },
+    "oilTemp": {
+      "pid": "1154", "formula": "A_LINEAR", "scale": 0.75, "offset": -48, "unit": "C", "tickRate": 10, "tickOffset": 4,
+      "optimalF": 240, "warnF": 250, "criticalF": 270
+    },
+    "transmissionOilTemp": {
+      "pid": "1123", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 3, "tickOffset": 2,
+      "warnF": 266, "criticalF": 302
+    },
+    "highPressureFuelPump": {
+      "pid": "1094", "formula": "A_LINEAR", "scale": 20.7197, "unit": "PSI", "tickRate": 3,
+      "warnPSI": 1500, "criticalPSI": 1200
+    },
+    "lowPressureFuelPump": {
+      "pid": "1095", "formula": "A_LINEAR", "scale": 20.7197, "unit": "PSI", "tickRate": 3, "tickOffset": 1,
+      "warnPSI": 65, "criticalPSI": 50
+    }
   }
 }
