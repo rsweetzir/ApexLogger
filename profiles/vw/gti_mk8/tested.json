@@ -1,0 +1,15 @@
+{
+  "id": "vw_gti_mk8",
+  "name": "Golf GTI Mk8 · 2.0L TSI",
+  "shortName": "GTI Mk8",
+  "cylinderCount": 4,
+  "firingOrder": [1, 3, 4, 2],
+  "isTurbo": true,
+  "tcm": { "request": "7E2", "response": "7EA" },
+  "features": { "showFuelRailPressure": true },
+  "thresholds": {
+    "boostWarnPSI": 14, "boostCriticalPSI": 18,
+    "oilOptimalF": 240, "oilWarnF": 250, "oilCriticalF": 270,
+    "cltOptimalF": 207, "cltWarnF": 230, "cltCriticalF": 248
+  }
+}
