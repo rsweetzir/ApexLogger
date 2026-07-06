@@ -1,0 +1,15 @@
+{
+  "id": "bmw_n55",
+  "name": "N55 · 3.0L Single-Turbo I6",
+  "shortName": "N55 T",
+  "cylinderCount": 6,
+  "firingOrder": [1, 5, 3, 6, 2, 4],
+  "isTurbo": true,
+  "tcm": { "request": "7E3", "response": "7EB" },
+  "features": { "showHPFP": true, "showTimingCorr": true },
+  "thresholds": {
+    "boostWarnPSI": 14, "boostCriticalPSI": 18,
+    "oilOptimalF": 240, "oilWarnF": 250, "oilCriticalF": 270,
+    "cltOptimalF": 207, "cltWarnF": 230, "cltCriticalF": 248
+  }
+}
