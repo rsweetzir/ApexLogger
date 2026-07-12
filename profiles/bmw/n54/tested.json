@@ -58,5 +58,6 @@
         { "pid": "1106", "index": 5, "tickOffset": 2 }
       ]
     }
-  }
+  },
+  "vinPrefixes": ["WBA", "WBS", "WBX", "WBN"]
 }

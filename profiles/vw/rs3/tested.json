@@ -34,5 +34,6 @@
       "pid": "015C", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10, "tickOffset": 4,
       "optimalF": 240, "warnF": 250, "criticalF": 270
     }
-  }
+  },
+  "vinPrefixes": ["WAU", "WUA", "TRU"]
 }

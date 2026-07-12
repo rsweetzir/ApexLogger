@@ -46,5 +46,6 @@
       "pid": "1095", "formula": "A_LINEAR", "scale": 20.7197, "unit": "PSI", "tickRate": 3, "tickOffset": 1,
       "warnPSI": 65, "criticalPSI": 50
     }
-  }
+  },
+  "vinPrefixes": ["WBA", "WBS", "WBX", "WBN"]
 }
