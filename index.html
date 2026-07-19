@@ -103,6 +103,42 @@
     .btn:hover { opacity: 0.85; text-decoration: none; }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-store {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      padding: 10px 22px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      cursor: default;
+    }
+    .btn-store:hover { opacity: 1; }
+    .btn-store-label {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .btn-store-name { font-size: 0.98rem; font-weight: 600; }
+    .hero-subnote {
+      margin-top: 22px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .canbus-soon {
+      max-width: 620px;
+      margin: 32px auto 0;
+      text-align: center;
+      padding: 26px 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .canbus-soon .hero-eyebrow { margin-bottom: 12px; }
+    .canbus-soon p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+    .canbus-soon-link { margin-top: 10px !important; font-size: 0.85rem !important; }
 
     /* APP ICON */
     .icon-wrap {
@@ -425,9 +461,16 @@
   <h1>Every run.<br /><span>Every data point.</span></h1>
   <p>Autocross, drag, track day, and rally — ApexLogger adapts to your event. GPS timing, boost, fuel pressure, per-cylinder corrections, Apple CarPlay gauges, and Apple Watch heart rate, all in one app built for performance enthusiasts.</p>
   <div class="btn-group">
-    <a class="btn btn-primary" href="#appstore">Download on the App Store</a>
-    <a class="btn btn-ghost" href="support.html">Get Support</a>
+    <span class="btn btn-store" aria-disabled="true">
+      <span class="btn-store-label">Coming soon on the</span>
+      <span class="btn-store-name">App Store</span>
+    </span>
+    <span class="btn btn-store" aria-disabled="true">
+      <span class="btn-store-label">Coming soon on</span>
+      <span class="btn-store-name">Google Play</span>
+    </span>
   </div>
+  <p class="hero-subnote">ApexLogger is currently in private beta. <a href="support.html">Get in touch</a> to follow along or request early access.</p>
 </section>
 
 <div class="icon-wrap">
@@ -654,9 +697,11 @@
       </tr>
     </tbody>
   </table>
-  <p style="margin-top:18px;font-size:0.85rem;color:var(--muted);text-align:center;">
-    More engine profiles coming. <a href="support.html">Request your engine →</a>
-  </p>
+  <div class="canbus-soon">
+    <span class="hero-eyebrow">Coming Soon</span>
+    <p>Broader CAN bus (Mode 22) coverage is actively being added — more engine families, additional per-cylinder and knock data, and deeper manufacturer-specific PID support across platforms.</p>
+    <p class="canbus-soon-link"><a href="support.html">Request your engine →</a></p>
+  </div>
 </section>
 
 <!-- SCREENSHOTS -->
