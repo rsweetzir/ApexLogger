@@ -26,10 +26,7 @@
       "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10, "tickOffset": 2,
       "criticalF": 145, "heatSoakDeltaF": 35
     },
-    "oilTemp": {
-      "pid": "015C", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10, "tickOffset": 4,
-      "optimalF": 240, "warnF": 250, "criticalF": 270
-    }
+    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "tickRate": 10, "tickOffset": 4 }
   },
   "vinPrefixes": ["YV4", "YV1"]
 }
