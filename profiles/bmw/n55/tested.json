@@ -13,7 +13,7 @@
     "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "tickRate": 1 },
 
     "boostPressure": {
-      "pid": "1151", "formula": "AB_LINEAR", "scale": 0.0145, "offset": -14.7,
+      "pid": "1151", "formula": "AB_LINEAR", "scale": 0.0145,
       "unit": "PSI", "tickRate": 1,
       "warnPSI": 14, "criticalPSI": 18
     },
