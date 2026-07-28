@@ -87,6 +87,22 @@
       padding-top: 12px;
     }
 
+    .card-shot {
+      margin-top: 16px;
+      max-width: 240px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .card-shot img { width: 100%; display: block; }
+    .card-shot-caption {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: #0d0d0d;
+      border-top: 1px solid var(--border);
+    }
+
     footer {
       border-top: 1px solid var(--border); padding: 28px 40px;
       font-size: 0.85rem; color: var(--muted);
@@ -121,6 +137,10 @@
         <span class="badge badge-improve">Improved</span>
         <h4>ApexLogger's own icon set, now on the CarPlay dash</h4>
         <p>CarPlay gauges use the same custom icon set as the in-app screens instead of generic system glyphs, and icons now render at the correct resolution for your car's display — sharper on larger center screens.</p>
+        <div class="card-shot">
+          <img src="screenshots/carplay-dynamic-layout.png" alt="ApexLogger CarPlay dash for a Volvo B5/B6 profile, showing speed, G-force, engine load, coolant temp, battery, intake air temp, boost, and air/fuel with custom icons" />
+          <div class="card-shot-caption">Live from CarPlay — Volvo B5/B6 profile, custom icon set</div>
+        </div>
       </div>
     </div>
 
@@ -149,6 +169,10 @@
         <span class="badge badge-fix">Fixed</span>
         <h4>Engine Load replaces Oil Temp</h4>
         <p>The B5/B6's ECU doesn't expose an oil temperature PID, so that gauge is replaced with live Calculated Engine Load for this platform.</p>
+        <div class="card-shot">
+          <img src="screenshots/gauges-engine-load.png" alt="ApexLogger gauges list for a Volvo B5/B6 showing Load 25%, Coolant 181°F, IAT 102°F, Lambda, Battery, TPS, GPS/OBD MPH, and G-force readings" />
+          <div class="card-shot-caption">Engine Load now shown in place of the unsupported Oil Temp reading</div>
+        </div>
       </div>
       <div class="card">
         <span class="badge badge-fix">Fixed</span>
@@ -176,7 +200,7 @@
       </div>
     </div>
 
-    <p class="shot-note">Screenshots of these updates are on the way — check back soon.</p>
+    <p class="shot-note">More screenshots on the way for the connectivity and voice alert updates above.</p>
   </div>
 </main>
 
