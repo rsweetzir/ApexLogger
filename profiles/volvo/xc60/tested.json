@@ -12,7 +12,7 @@
     "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "tickRate": 1 },
 
     "manifoldPressure":   { "pid": "010B", "formula": "A_LINEAR", "unit": "kPa", "tickRate": 1 },
-    "boostPressure":      { "warnPSI": 12, "criticalPSI": 16 },
+    "boostPressure":      { "warnPSI": 12, "criticalPSI": 16, "overboostGraceSec": 15, "overboostGraceTPS": 40 },
 
     "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "tickRate": 10, "tickOffset": 6 },
     "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "tickRate": 10, "tickOffset": 6 },
