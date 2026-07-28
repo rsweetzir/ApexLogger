@@ -102,6 +102,12 @@
       background: #0d0d0d;
       border-top: 1px solid var(--border);
     }
+    .card-shot-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .card-shot-row .card-shot { margin-top: 16px; }
 
     footer {
       border-top: 1px solid var(--border); padding: 28px 40px;
@@ -160,6 +166,16 @@
         <span class="badge badge-new">New</span>
         <h4>OBD Simulator mode</h4>
         <p>No adapter handy? Connect the built-in simulator to preview every gauge screen and CarPlay layout for your vehicle profile with all values at zero — no physical hardware required.</p>
+        <div class="card-shot-row">
+          <div class="card-shot">
+            <img src="screenshots/simulator-picker.png" alt="ApexLogger's Select OBD-II Interface screen showing a Simulator option above the list of nearby Bluetooth adapters" />
+            <div class="card-shot-caption">Simulator sits right alongside real adapters in the picker</div>
+          </div>
+          <div class="card-shot">
+            <img src="screenshots/simulator-gauges.png" alt="ApexLogger gauges screen connected to Simulator, showing Volvo B5/B6 profile gauges all reading zero" />
+            <div class="card-shot-caption">Connected — every gauge reads zero, no hardware needed</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -200,7 +216,7 @@
       </div>
     </div>
 
-    <p class="shot-note">More screenshots on the way for the connectivity and voice alert updates above.</p>
+    <p class="shot-note">More screenshots on the way for the adapter diagnostics and voice alert updates above.</p>
   </div>
 </main>
 
