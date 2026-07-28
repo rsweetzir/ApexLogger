@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's New — ApexLogger</title>
+  <meta name="description" content="Recent updates and improvements to ApexLogger — CarPlay, OBD connectivity, Volvo B5/B6 support, and voice alerts." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --surface: #141414; --border: #222;
+      --accent: #4a90d9; --accent-dim: rgba(74,144,217,0.12);
+      --text: #f0f0f0; --muted: #888; --green: #30d158; --orange: #ff9f0a;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; }
+    a { color: var(--accent); }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px; border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 700; text-decoration: none; color: var(--text); }
+    .nav-back a { font-size: 0.9rem; color: var(--muted); }
+
+    main { max-width: 760px; margin: 0 auto; padding: 60px 24px 80px; }
+    .page-title { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 48px; }
+
+    .release {
+      margin-bottom: 56px;
+    }
+    .release-date {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .release-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 28px;
+    }
+
+    .update-group { margin-bottom: 24px; }
+    .update-group h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 22px 24px; margin-bottom: 12px;
+    }
+    .card:last-child { margin-bottom: 0; }
+    .card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+    .card p  { font-size: 0.88rem; color: #bbb; }
+    .card .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .badge-fix     { background: rgba(255,159,10,0.15); color: var(--orange); }
+    .badge-new     { background: rgba(48,209,88,0.15);  color: var(--green); }
+    .badge-improve { background: var(--accent-dim);     color: var(--accent); }
+
+    .shot-note {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 12px;
+    }
+
+    .card-shot {
+      margin-top: 16px;
+      max-width: 240px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .card-shot img { width: 100%; display: block; }
+    .card-shot-caption {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: #0d0d0d;
+      border-top: 1px solid var(--border);
+    }
+    .card-shot-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .card-shot-row .card-shot { margin-top: 16px; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 40px;
+      font-size: 0.85rem; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">ApexLogger</a>
+  <span class="nav-back"><a href="index.html">← Back</a></span>
+</nav>
+
+<main>
+  <h1 class="page-title">What's New</h1>
+  <p class="subtitle">Recent improvements to ApexLogger, rolling out to TestFlight testers now.</p>
+
+  <div class="release">
+    <span class="release-date">July 2026</span>
+    <h2 class="release-title">CarPlay layout, connection reliability, Volvo B5/B6 accuracy, and voice alerts</h2>
+
+    <div class="update-group">
+      <h3>Apple CarPlay</h3>
+      <div class="card">
+        <span class="badge badge-improve">Improved</span>
+        <h4>Layout now adapts automatically to your engine profile</h4>
+        <p>The CarPlay gauge rows are built from your selected vehicle's actual sensor support — no more empty or irrelevant rows for gauges your engine doesn't have. Add a sensor to your profile and it appears on the dash automatically.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-improve">Improved</span>
+        <h4>ApexLogger's own icon set, now on the CarPlay dash</h4>
+        <p>CarPlay gauges use the same custom icon set as the in-app screens instead of generic system glyphs, and icons now render at the correct resolution for your car's display — sharper on larger center screens.</p>
+        <div class="card-shot">
+          <img src="screenshots/carplay-dynamic-layout.png" alt="ApexLogger CarPlay dash for a Volvo B5/B6 profile, showing speed, G-force, engine load, coolant temp, battery, intake air temp, boost, and air/fuel with custom icons" />
+          <div class="card-shot-caption">Live from CarPlay — Volvo B5/B6 profile, custom icon set</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="update-group">
+      <h3>OBD-II Connectivity</h3>
+      <div class="card">
+        <span class="badge badge-fix">Fixed</span>
+        <h4>More reliable Bluetooth adapter connections</h4>
+        <p>Reworked how ApexLogger tracks connection state end-to-end, fixing cases where the app reported "connected" without live data, and cleaning up handling of budget OBD adapters that were mis-binding to the wrong Bluetooth service.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-new">New</span>
+        <h4>Disconnect, reconnect, and adapter diagnostics</h4>
+        <p>Tap the connection status pill to disconnect, reconnect, switch adapters, or view live diagnostics — including adapter chip identity and Bluetooth service/characteristic info for troubleshooting flaky interfaces.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-new">New</span>
+        <h4>OBD Simulator mode</h4>
+        <p>No adapter handy? Connect the built-in simulator to preview every gauge screen and CarPlay layout for your vehicle profile with all values at zero — no physical hardware required.</p>
+        <div class="card-shot-row">
+          <div class="card-shot">
+            <img src="screenshots/simulator-picker.png" alt="ApexLogger's Select OBD-II Interface screen showing a Simulator option above the list of nearby Bluetooth adapters" />
+            <div class="card-shot-caption">Simulator sits right alongside real adapters in the picker</div>
+          </div>
+          <div class="card-shot">
+            <img src="screenshots/simulator-gauges.png" alt="ApexLogger gauges screen connected to Simulator, showing Volvo B5/B6 profile gauges all reading zero" />
+            <div class="card-shot-caption">Connected — every gauge reads zero, no hardware needed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="update-group">
+      <h3>Volvo B5/B6</h3>
+      <div class="card">
+        <span class="badge badge-fix">Fixed</span>
+        <h4>Engine Load replaces Oil Temp</h4>
+        <p>The B5/B6's ECU doesn't expose an oil temperature PID, so that gauge is replaced with live Calculated Engine Load for this platform.</p>
+        <div class="card-shot">
+          <img src="screenshots/gauges-engine-load.png" alt="ApexLogger gauges list for a Volvo B5/B6 showing Load 25%, Coolant 181°F, IAT 102°F, Lambda, Battery, TPS, GPS/OBD MPH, and G-force readings" />
+          <div class="card-shot-caption">Engine Load now shown in place of the unsupported Oil Temp reading</div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="badge badge-fix">Fixed</span>
+        <h4>Boost pressure now corrected for real-time air pressure</h4>
+        <p>Boost readings account for your current local barometric pressure rather than assuming sea-level conditions, so gauge PSI stays accurate at altitude and in changing weather.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-new">New</span>
+        <h4>Factory overboost recognized, not flagged as a fault</h4>
+        <p>The B5/B6's ECU briefly allows boost above its steady-state max under hard acceleration. ApexLogger now holds the overboost alert for a short grace window while you're on the throttle, instead of firing a false alarm during normal, expected engine behavior.</p>
+      </div>
+    </div>
+
+    <div class="update-group">
+      <h3>Voice Alerts</h3>
+      <div class="card">
+        <span class="badge badge-fix">Fixed</span>
+        <h4>Music resumes after spoken alerts</h4>
+        <p>CarPlay and Bluetooth audio now properly resumes after ApexLogger speaks a threshold alert or run announcement, instead of staying paused.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-fix">Fixed</span>
+        <h4>"PSI" pronounced correctly</h4>
+        <p>Spoken alerts now read "PSI" as individual letters instead of mispronouncing it as a word.</p>
+      </div>
+    </div>
+
+    <p class="shot-note">More screenshots on the way for the adapter diagnostics and voice alert updates above.</p>
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 ApexLogger</span>
+  <div><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="support.html">Support</a></div>
+</footer>
+
+</body>
+</html>
