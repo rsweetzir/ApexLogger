@@ -24,10 +24,7 @@
       "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10, "tickOffset": 2,
       "criticalF": 145, "heatSoakDeltaF": 30
     },
-    "oilTemp": {
-      "pid": "1154", "formula": "A_LINEAR", "scale": 0.75, "offset": -48, "unit": "C", "tickRate": 10, "tickOffset": 4,
-      "optimalF": 240, "warnF": 250, "criticalF": 270
-    },
+    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "tickRate": 10, "tickOffset": 4 },
     "transmissionOilTemp": {
       "pid": "1123", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 3, "tickOffset": 2,
       "warnF": 266, "criticalF": 302

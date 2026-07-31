@@ -12,11 +12,8 @@
     "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "tickRate": 1 },
     "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "tickRate": 1 },
 
-    "boostPressure": {
-      "pid": "1151", "formula": "AB_LINEAR", "scale": 0.0145,
-      "unit": "PSI", "tickRate": 1,
-      "warnPSI": 14, "criticalPSI": 18
-    },
+    "manifoldPressure":   { "pid": "010B", "formula": "A_LINEAR", "unit": "kPa", "tickRate": 1 },
+    "boostPressure":      { "warnPSI": 14, "criticalPSI": 18 },
 
     "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "tickRate": 10, "tickOffset": 6 },
     "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "tickRate": 10, "tickOffset": 6 },
@@ -30,33 +27,10 @@
       "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10, "tickOffset": 2,
       "criticalF": 145, "heatSoakDeltaF": 35
     },
-    "oilTemp": {
-      "pid": "1154", "formula": "A_LINEAR", "scale": 0.75, "offset": -48, "unit": "C", "tickRate": 10, "tickOffset": 4,
-      "optimalF": 240, "warnF": 250, "criticalF": 270
-    },
+    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "tickRate": 10, "tickOffset": 4 },
     "transmissionOilTemp": {
       "pid": "1123", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 3, "tickOffset": 2,
       "warnF": 266, "criticalF": 302
-    },
-    "highPressureFuelPump": {
-      "pid": "1094", "formula": "A_LINEAR", "scale": 20.7197, "unit": "PSI", "tickRate": 3,
-      "warnPSI": 1500, "criticalPSI": 1200
-    },
-    "lowPressureFuelPump": {
-      "pid": "1095", "formula": "A_LINEAR", "scale": 20.7197, "unit": "PSI", "tickRate": 3, "tickOffset": 1,
-      "warnPSI": 65, "criticalPSI": 50
-    },
-    "timingCorrections": {
-      "formula": "A_LINEAR", "scale": 0.5, "offset": -15, "unit": "deg", "tickRate": 3,
-      "warnDeg": -1.5, "criticalDeg": -3.0,
-      "cylinders": [
-        { "pid": "1101", "index": 0, "tickOffset": 0 },
-        { "pid": "1102", "index": 1, "tickOffset": 0 },
-        { "pid": "1103", "index": 2, "tickOffset": 1 },
-        { "pid": "1104", "index": 3, "tickOffset": 1 },
-        { "pid": "1105", "index": 4, "tickOffset": 2 },
-        { "pid": "1106", "index": 5, "tickOffset": 2 }
-      ]
     }
   },
   "vinPrefixes": ["WBA", "WBS", "WBX", "WBN"]
