@@ -5,6 +5,7 @@
   "cylinderCount": 6,
   "firingOrder": [1, 5, 3, 6, 2, 4],
   "isTurbo": true,
+  "displacementL": 2.979,
   "tcm": { "request": "7E3", "response": "7EB" },
   "canConfig": { "protocol": "6", "txHeader": "7E0", "rxHeader": "7E8" },
   "manufacturer": { "name": "BMW", "ecu": "MSD80", "mode": "22" },

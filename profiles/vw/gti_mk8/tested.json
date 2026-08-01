@@ -5,6 +5,7 @@
   "cylinderCount": 4,
   "firingOrder": [1, 3, 4, 2],
   "isTurbo": true,
+  "displacementL": 1.984,
   "tcm": { "request": "7E2", "response": "7EA" },
   "canConfig": { "protocol": "6", "txHeader": "7DF", "rxHeader": "7E8" },
   "sensors": {

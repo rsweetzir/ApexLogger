@@ -10,6 +10,7 @@
     { "path": "vw/golf_r/tested.json",    "sha256": "" },
     { "path": "volvo/xc60/tested.json",   "sha256": "" },
     { "path": "honda/civic15t/tested.json",   "sha256": "" },
-    { "path": "honda/civic_typer/tested.json", "sha256": "" }
+    { "path": "honda/civic_typer/tested.json", "sha256": "" },
+    { "path": "generic/mode1.json",           "sha256": "" }
   ]
 }
