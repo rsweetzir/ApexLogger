@@ -8,25 +8,25 @@
   "tcm": null,
   "canConfig": { "protocol": "0" },
   "sensors": {
-    "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "tickRate": 1 },
-    "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "tickRate": 1 },
+    "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "latency": "low" },
+    "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
 
-    "manifoldPressure":   { "pid": "010B", "formula": "A_LINEAR", "unit": "kPa", "tickRate": 1 },
+    "manifoldPressure":   { "pid": "010B", "formula": "A_LINEAR", "unit": "kPa", "latency": "low" },
     "boostPressure":      { "warnPSI": 12, "criticalPSI": 16, "overboostGraceSec": 15, "overboostGraceTPS": 40 },
 
-    "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "tickRate": 10, "tickOffset": 6 },
-    "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "tickRate": 10, "tickOffset": 6 },
-    "batteryVoltage":     { "pid": "0142", "formula": "AB_LINEAR", "scale": 0.001, "unit": "V", "tickRate": 10, "tickOffset": 8 },
+    "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "latency": "high" },
+    "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "latency": "high" },
+    "batteryVoltage":     { "pid": "0142", "formula": "AB_LINEAR", "scale": 0.001, "unit": "V", "latency": "high" },
 
     "coolantTemp": {
-      "pid": "0105", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10,
+      "pid": "0105", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
       "optimalF": 207, "warnF": 230, "criticalF": 248
     },
     "intakeAirTemp": {
-      "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "tickRate": 10, "tickOffset": 2,
+      "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
       "criticalF": 145, "heatSoakDeltaF": 35
     },
-    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "tickRate": 10, "tickOffset": 4 }
+    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "latency": "low" }
   },
   "vinPrefixes": ["YV4", "YV1"]
 }
