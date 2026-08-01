@@ -1,22 +1,21 @@
 {
-  "id": "vw_rs3",
-  "name": "RS3 · 2.5L Turbo I5",
-  "shortName": "RS3 I5",
-  "cylinderCount": 5,
-  "firingOrder": [1, 2, 4, 5, 3],
+  "id": "bmw_n55",
+  "name": "N55 · 3.0L Single-Turbo I6",
+  "shortName": "N55 T",
+  "cylinderCount": 6,
+  "firingOrder": [1, 5, 3, 6, 2, 4],
   "isTurbo": true,
-  "tcm": { "request": "7E2", "response": "7EA" },
-  "canConfig": { "protocol": "6", "txHeader": "7DF", "rxHeader": "7E8" },
+  "status": "testing",
+  "displacementL": 2.979,
+  "tcm": { "request": "7E3", "response": "7EB" },
+  "canConfig": { "protocol": "6", "txHeader": "7E0", "rxHeader": "7E8" },
+  "manufacturer": { "name": "BMW", "ecu": "MSD80", "mode": "22" },
   "sensors": {
     "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "latency": "low" },
     "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
 
     "manifoldPressure":   { "pid": "010B", "formula": "A_LINEAR", "unit": "kPa", "latency": "low" },
-    "boostPressure":      { "warnPSI": 20, "criticalPSI": 25 },
-
-    "fuelRailPressure": {
-      "pid": "0123", "formula": "AB_LINEAR", "scale": 1.45038, "unit": "PSI", "latency": "high"
-    },
+    "boostPressure":      { "warnPSI": 14, "criticalPSI": 18 },
 
     "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "latency": "high" },
     "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "latency": "high" },
@@ -30,10 +29,11 @@
       "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
       "criticalF": 145, "heatSoakDeltaF": 35
     },
-    "oilTemp": {
-      "pid": "015C", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
-      "optimalF": 240, "warnF": 250, "criticalF": 270
+    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
+    "transmissionOilTemp": {
+      "pid": "1123", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
+      "warnF": 266, "criticalF": 302
     }
   },
-  "vinPrefixes": ["WAU", "WUA", "TRU"]
+  "vinPrefixes": ["WBA", "WBS", "WBX", "WBN"]
 }

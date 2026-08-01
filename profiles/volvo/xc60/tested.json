@@ -5,6 +5,7 @@
   "cylinderCount": 4,
   "firingOrder": [1, 3, 4, 2],
   "isTurbo": true,
+  "status": "tested",
   "tcm": null,
   "canConfig": { "protocol": "0" },
   "sensors": {

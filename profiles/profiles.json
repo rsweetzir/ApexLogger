@@ -1,16 +1,16 @@
 {
   "schemaVersion": 3,
   "profiles": [
-    { "path": "bmw/n54/tested.json",      "sha256": "" },
-    { "path": "bmw/n55/tested.json",      "sha256": "" },
-    { "path": "bmw/b58/tested.json",      "sha256": "" },
-    { "path": "bmw/n52_n51/tested.json",  "sha256": "" },
-    { "path": "vw/rs3/tested.json",       "sha256": "" },
-    { "path": "vw/gti_mk8/tested.json",   "sha256": "" },
-    { "path": "vw/golf_r/tested.json",    "sha256": "" },
-    { "path": "volvo/xc60/tested.json",   "sha256": "" },
-    { "path": "honda/civic15t/tested.json",   "sha256": "" },
-    { "path": "honda/civic_typer/tested.json", "sha256": "" },
+    { "path": "bmw/n54/tested.json",       "sha256": "" },
+    { "path": "bmw/n55/testing.json",      "sha256": "" },
+    { "path": "bmw/b58/testing.json",      "sha256": "" },
+    { "path": "bmw/n52_n51/testing.json",  "sha256": "" },
+    { "path": "vw/rs3/testing.json",       "sha256": "" },
+    { "path": "vw/gti_mk8/testing.json",   "sha256": "" },
+    { "path": "vw/golf_r/testing.json",    "sha256": "" },
+    { "path": "volvo/xc60/tested.json",    "sha256": "" },
+    { "path": "honda/civic15t/testing.json",   "sha256": "" },
+    { "path": "honda/civic_typer/testing.json", "sha256": "" },
     { "path": "generic/mode1.json",           "sha256": "" }
   ]
 }

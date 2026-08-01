@@ -1,20 +1,20 @@
 {
-  "id": "bmw_b58",
-  "name": "B58 · 3.0L Single-Turbo I6+",
-  "shortName": "B58 T",
-  "cylinderCount": 6,
-  "firingOrder": [1, 5, 3, 6, 2, 4],
+  "id": "honda_civic_typer",
+  "name": "Civic Type R · FK8/FL5 K20C1",
+  "shortName": "Civic CTR",
+  "cylinderCount": 4,
+  "firingOrder": [1, 3, 4, 2],
   "isTurbo": true,
-  "displacementL": 2.998,
-  "tcm": { "request": "7E3", "response": "7EB" },
-  "canConfig": { "protocol": "6", "txHeader": "7E0", "rxHeader": "7E8" },
-  "manufacturer": { "name": "BMW", "ecu": "MG1", "mode": "22" },
+  "status": "testing",
+  "displacementL": 1.996,
+  "tcm": null,
+  "canConfig": { "protocol": "6", "txHeader": "7DF", "rxHeader": "7E8" },
   "sensors": {
     "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "latency": "low" },
     "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
 
     "manifoldPressure":   { "pid": "010B", "formula": "A_LINEAR", "unit": "kPa", "latency": "low" },
-    "boostPressure":      { "warnPSI": 16, "criticalPSI": 20 },
+    "boostPressure":      { "warnPSI": 21, "criticalPSI": 26 },
 
     "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "latency": "high" },
     "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "latency": "high" },
@@ -28,11 +28,10 @@
       "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
       "criticalF": 145, "heatSoakDeltaF": 35
     },
-    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
-    "transmissionOilTemp": {
-      "pid": "1123", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
-      "warnF": 266, "criticalF": 302
+    "oilTemp": {
+      "pid": "015C", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
+      "optimalF": 240, "warnF": 250, "criticalF": 270
     }
   },
-  "vinPrefixes": ["WBA", "WBS", "WBX", "WBN"]
+  "vinPrefixes": ["JHM", "1HG", "19X"]
 }
