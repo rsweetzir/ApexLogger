@@ -1,0 +1,92 @@
+{
+  "id": "bmw_n54_mode22",
+  "name": "N54 · 3.0L Twin-Turbo I6 (Mode 22 / DID4000)",
+  "shortName": "N54 M22",
+  "cylinderCount": 6,
+  "firingOrder": [1, 5, 3, 6, 2, 4],
+  "isTurbo": true,
+  "status": "testing",
+  "displacementL": 2.979,
+  "tcm": { "request": "7E3", "response": "7EB" },
+  "canConfig": { "protocol": "6", "txHeader": "7E0", "rxHeader": "7E8" },
+  "manufacturer": { "name": "BMW", "ecu": "MSD80", "mode": "22" },
+  "polling": { "lowLatencyMs": 200, "highLatencyMs": 3000 },
+  "sensors": {
+    "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "latency": "low" },
+    "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
+
+    "manifoldPressure":   { "pid": "010B", "formula": "A_LINEAR", "unit": "kPa", "latency": "low" },
+    "boostPressure":      { "warnPSI": 18, "criticalPSI": 22 },
+
+    "barometricPressure": { "pid": "0133", "formula": "A_LINEAR", "unit": "kPa", "latency": "high" },
+    "lambda":             { "pid": "0144", "formula": "AB_LAMBDA", "unit": "lambda", "latency": "high" },
+    "batteryVoltage":     { "pid": "0142", "formula": "AB_LINEAR", "scale": 0.001, "unit": "V", "latency": "high" },
+
+    "coolantTemp": {
+      "pid": "0105", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
+      "optimalF": 207, "warnF": 230, "criticalF": 248
+    },
+    "intakeAirTemp": {
+      "pid": "010F", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high",
+      "criticalF": 145, "heatSoakDeltaF": 35
+    },
+    "engineLoad": { "pid": "0104", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
+
+    "rpm":           { "pid": "010C", "formula": "AB_LINEAR", "scale": 0.25, "unit": "rpm", "latency": "high" },
+    "timingAdvance": { "pid": "010E", "formula": "A_LINEAR", "scale": 0.5, "offset": -64, "unit": "deg", "latency": "high" },
+    "oilTempMode1":  { "pid": "015C", "formula": "A_LINEAR", "offset": -40, "unit": "C", "latency": "high" },
+
+    "did4000": {
+      "pid": "4000", "latency": "low", "visible": false, "tolerateResponsePending": true,
+      "blockFields": [
+        { "id": "did4000Rpm",   "byteOffset": 10, "byteWidth": 2, "unit": "rpm", "visible": true, "dispatchId": "rpm" },
+        { "id": "did4000Speed", "byteOffset": 9,  "byteWidth": 1, "unit": "kmh", "visible": true, "dispatchId": "speed" },
+
+        { "id": "candidateMAP", "byteOffset": 13, "byteWidth": 1, "scale": 0.274, "unit": "kPa",
+          "visible": true, "dispatchId": "map" },
+        { "id": "candidateCoolant1", "byteOffset": 19, "byteWidth": 1, "scale": 1, "offset": -99, "unit": "C",
+          "visible": true, "dispatchId": "coolantTemp" },
+
+        { "id": "candidateCoolant2",     "byteOffset": 30, "byteWidth": 1, "scale": 1, "offset": -89, "unit": "C", "visible": true },
+        { "id": "candidateIAT",          "byteOffset": 18, "byteWidth": 1, "unit": "raw", "visible": true },
+        { "id": "candidateTiming",       "byteOffset": 20, "byteWidth": 1, "unit": "raw", "visible": true },
+        { "id": "candidateThrottleLoad", "byteOffset": 21, "byteWidth": 3, "unit": "raw", "visible": true },
+
+        { "id": "byte00", "byteOffset": 0, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte01", "byteOffset": 1, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte02", "byteOffset": 2, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte03", "byteOffset": 3, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte04", "byteOffset": 4, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte05", "byteOffset": 5, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte06", "byteOffset": 6, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte07", "byteOffset": 7, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte08", "byteOffset": 8, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte12", "byteOffset": 12, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte14", "byteOffset": 14, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte15", "byteOffset": 15, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte16", "byteOffset": 16, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte17", "byteOffset": 17, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte24", "byteOffset": 24, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte25", "byteOffset": 25, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte26", "byteOffset": 26, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte27", "byteOffset": 27, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte28", "byteOffset": 28, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte29", "byteOffset": 29, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte31", "byteOffset": 31, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte32", "byteOffset": 32, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte33", "byteOffset": 33, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte34", "byteOffset": 34, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte35", "byteOffset": 35, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte36", "byteOffset": 36, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte37", "byteOffset": 37, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte38", "byteOffset": 38, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte39", "byteOffset": 39, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte40", "byteOffset": 40, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte41", "byteOffset": 41, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte42", "byteOffset": 42, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "byte43", "byteOffset": 43, "byteWidth": 1, "unit": "raw", "visible": false }
+      ]
+    }
+  },
+  "vinPrefixes": []
+}
