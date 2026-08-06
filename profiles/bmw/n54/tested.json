@@ -1,7 +1,7 @@
 {
   "id": "bmw_n54",
-  "name": "N54 · 3.0L Twin-Turbo I6",
-  "shortName": "N54 TT",
+  "name": "N54 MODE1 · 3.0L Twin-Turbo I6",
+  "shortName": "N54 M1",
   "cylinderCount": 6,
   "firingOrder": [1, 5, 3, 6, 2, 4],
   "isTurbo": true,

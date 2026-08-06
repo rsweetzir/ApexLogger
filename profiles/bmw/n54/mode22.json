@@ -1,6 +1,6 @@
 {
   "id": "bmw_n54_mode22",
-  "name": "N54 · 3.0L Twin-Turbo I6 (Mode 22 / DID4000)",
+  "name": "N54 MODE22 · 3.0L Twin-Turbo I6 (DID4000)",
   "shortName": "N54 M22",
   "cylinderCount": 6,
   "firingOrder": [1, 5, 3, 6, 2, 4],
