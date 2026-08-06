@@ -2,6 +2,7 @@
   "schemaVersion": 3,
   "profiles": [
     { "path": "bmw/n54/tested.json",       "sha256": "" },
+    { "path": "bmw/n54/mode22.json",       "sha256": "" },
     { "path": "bmw/n55/testing.json",      "sha256": "" },
     { "path": "bmw/b58/testing.json",      "sha256": "" },
     { "path": "bmw/n52_n51/testing.json",  "sha256": "" },
