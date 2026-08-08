@@ -8,6 +8,7 @@
   "status": "tested",
   "tcm": null,
   "canConfig": { "protocol": "0" },
+  "polling": { "batchMode01": false },
   "sensors": {
     "speed":    { "pid": "010D", "formula": "A_LINEAR",  "unit": "kmh", "latency": "low" },
     "throttle": { "pid": "0111", "formula": "A_PERCENT", "unit": "pct", "latency": "low" },
