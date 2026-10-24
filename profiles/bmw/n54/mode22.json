@@ -43,15 +43,17 @@
         { "id": "rpm",   "byteOffset": 10, "byteWidth": 2, "unit": "rpm", "visible": true, "dispatchId": "rpm" },
 
         { "id": "candidate_27", "byteOffset": 27, "byteWidth": 1, "scale": 1, "offset": -34, "unit": "C",
-          "visible": true, "dispatchId": "coolantTemp" },
+          "visible": false },
+        { "id": "candidate_20_timing", "byteOffset": 20, "byteWidth": 1, "scale": 0.375, "offset": -35.625,
+          "unit": "deg", "visible": false },
 
-        { "id": "candidate_15",    "byteOffset": 15, "byteWidth": 1, "unit": "raw", "visible": true },
         { "id": "candidate_18",    "byteOffset": 18, "byteWidth": 1, "unit": "raw", "visible": true },
         { "id": "candidate_19",    "byteOffset": 19, "byteWidth": 1, "unit": "raw", "visible": true },
         { "id": "candidate_21_22", "byteOffset": 21, "byteWidth": 2, "unit": "raw", "visible": true },
         { "id": "candidate_30",    "byteOffset": 30, "byteWidth": 1, "unit": "raw", "visible": true },
 
         { "id": "ruled_out_13", "byteOffset": 13, "byteWidth": 1, "unit": "raw", "visible": false },
+        { "id": "ruled_out_15", "byteOffset": 15, "byteWidth": 1, "unit": "raw", "visible": false },
         { "id": "ruled_out_16", "byteOffset": 16, "byteWidth": 1, "unit": "raw", "visible": false },
         { "id": "ruled_out_20", "byteOffset": 20, "byteWidth": 1, "unit": "raw", "visible": false },
         { "id": "ruled_out_24", "byteOffset": 24, "byteWidth": 1, "unit": "raw", "visible": false },
@@ -86,7 +88,14 @@
         { "id": "byte_43", "byteOffset": 43, "byteWidth": 1, "unit": "raw", "visible": false },
         { "id": "byte_44", "byteOffset": 44, "byteWidth": 1, "unit": "raw", "visible": false },
         { "id": "byte_45", "byteOffset": 45, "byteWidth": 1, "unit": "raw", "visible": false },
-        { "id": "byte_46", "byteOffset": 46, "byteWidth": 1, "unit": "raw", "visible": false }
+        { "id": "byte_46", "byteOffset": 46, "byteWidth": 1, "unit": "raw", "visible": false },
+
+        { "id": "word_03_04", "byteOffset": 3,  "byteWidth": 2, "unit": "raw", "visible": false },
+        { "id": "word_05_06", "byteOffset": 5,  "byteWidth": 2, "unit": "raw", "visible": false, "signed": true },
+        { "id": "word_07_08", "byteOffset": 7,  "byteWidth": 2, "unit": "raw", "visible": false, "signed": true },
+        { "id": "word_23_24", "byteOffset": 23, "byteWidth": 2, "unit": "raw", "visible": false },
+        { "id": "word_25_26", "byteOffset": 25, "byteWidth": 2, "unit": "raw", "visible": false },
+        { "id": "word_28_29", "byteOffset": 28, "byteWidth": 2, "unit": "raw", "visible": false }
       ]
     },
 
