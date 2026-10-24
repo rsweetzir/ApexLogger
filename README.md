@@ -47,11 +47,8 @@ Every profile has an integer **`revision`** (missing = 0).
 So:
 
 - **Live troubleshooting change:** edit the file here and **increase `revision`** above the
-  version shipped in the app. The app downloads changed profiles in the background at launch;
-  the change takes effect when you tap the profile-update prompt in Settings, tap ↻ in the
-  vehicle-profile picker (downloads and applies at once), or on the next launch. The first launch
-  after installing a new app build skips the download once, so a fresh build starts from its own
-  profiles.
+  version shipped in the app. **The apps check for and apply newer revisions every time they
+  start**; ↻ in the vehicle-profile picker does the same without restarting.
 - **Shipping a change in an app release:** increase `revision` in the app's copy and publish the
   same file, with the same `revision`, here. A newer app build always wins over an older copy
   on this site.
