@@ -551,7 +551,7 @@
     <div class="mode-card">
       <div class="mode-label label-yellow">Drag</div>
       <h3>Straight-Line</h3>
-      <p>Cross the GPS start line or ARM for auto-Go on first throttle. Finish is auto-triggered at your chosen distance — <strong>⅛ mile</strong>, <strong>¼ mile</strong>, or a custom distance.</p>
+      <p>ARM, then launch — the clock starts the moment the car moves, detected by the phone's accelerometer. Finish is automatic at <strong>⅛ mile</strong>, <strong>¼ mile</strong>, or a custom distance, with a full timeslip: 60 ft, 330 ft, ⅛, 1000 ft, ¼ and trap speeds. <a href="#drag-timing">How it's measured</a></p>
     </div>
     <div class="mode-card">
       <div class="mode-label label-blue">Track Day</div>
@@ -566,6 +566,51 @@
   </div>
   <p style="text-align:center;margin-top:24px;font-size:0.85rem;color:var(--muted);">
     Switch event mode from the Track screen or directly from the <a href="#carplay">CarPlay driver panel</a> — no phone interaction required once you're strapped in.
+  </p>
+</section>
+
+<!-- DRAG TIMING -->
+<section class="section" id="drag-timing">
+  <p class="section-label">Drag timing</p>
+  <h2 class="section-title">How launch and split times are measured</h2>
+  <p style="text-align:center;margin:-8px 0 12px;font-size:0.85rem;color:var(--muted);">Coming in the next update.</p>
+  <p style="max-width:760px;margin:0 auto 28px;text-align:center;color:var(--muted);">
+    Phone GPS updates about once a second — at ⅛-mile speeds that's 30–40 m between fixes, and the 60 ft mark passes before a second fix arrives. GPS alone can't time a drag run, so ApexLogger combines it with the accelerometer.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">🟡</div>
+      <h3>1. Staging</h3>
+      <p>When you ARM, the accelerometer switches to 100 readings a second and learns what "standing still" reads on your mount for about a quarter of a second. Any mount angle works — the launch direction is learned from the launch itself.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚦</div>
+      <h3>2. Launch</h3>
+      <p>The run starts when the car pulls more than 0.1 g above rest for three readings in a row (30 ms). The start is then back-dated to where the pull first began, so detection delay isn't added to your time. A door slam or bump with no speed afterwards is ignored and the run re-stages.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>3. Speed and distance</h3>
+      <p>Acceleration is integrated into speed, which is accurate for the first seconds but drifts. Every good GPS speed reading — Doppler speed, which stays accurate even when GPS position wanders — corrects that drift. Distance comes from the corrected speed.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⏱</div>
+      <h3>4. Splits and trap speed</h3>
+      <p>Each mark's time is interpolated between readings rather than rounded to the next one. Trap speed is the average over the last 66 ft before the ⅛ and ¼, the way a strip measures it.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📏</div>
+      <h3>1 ft rollout</h3>
+      <p>At a strip, the clock starts when the front tire leaves the staging beam, about a foot after the car first moves. ApexLogger does the same by default so your numbers compare with real timeslips. Turn it off in the drag menu to time from first movement.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>Accuracy</h3>
+      <p>In simulated runs with realistic sensor noise and mounting error, splits landed within about 0.05 s and trap speed within about 2 km/h. It hasn't yet been compared against a strip's timeslip. A timeslip marked "Accelerometer only" got no usable GPS speed and is less reliable past 60 ft.</p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:24px;font-size:0.85rem;color:var(--muted);">
+    Times are measured from the car moving, so they never include reaction time. A strip's elapsed time doesn't either, but its reaction time is printed separately on the slip.
   </p>
 </section>
 
